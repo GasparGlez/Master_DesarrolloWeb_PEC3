@@ -1,0 +1,1022 @@
+@charset "UTF-8";
+
+/* Fichero estilos CSS3 - PEC 3 - Gaspar González Vara */
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+body{
+    box-sizing: border-box; /* Para que por defecto los padding sean "por dentro" y no sumen dimensiones a los elementos */
+    margin: 0 auto;	/*Eliminamos márgenes superiores e inferiores y pongo los margenes laterales en auto para centrar */
+    
+    background-color: black; /* Fondo para la web */
+    font-family: 'Ubuntu', helvetica, arial, sans-serif;  /* Fuente para la web*/
+    color: white;
+    font-size: 11pt;
+    padding: 1em; /* para evitar que el contenido de la web esté completamente "pegado" a los bordes de la pantalla */
+}
+
+h1{	/* Títulos principales de la web */
+	margin: 0px; /* Sin margenes */
+	font-size: 30px; /* Tamaño */
+}
+
+h2{	/* Títulos secundarios de la web */
+	margin: 0px; /* Sin margenes */
+	font-size: 20px; /* Tamaño */
+}
+
+h3{	/* Títulos secundarios de la web */
+	margin: 0px; /* Sin margenes */
+	font-size: 17px; /* Tamaño */
+}
+
+header{
+    width: 100%;		
+	line-height: 50px;	/* Altura de línea igual a la altura del header para que el texto salga centrado en altura*/
+	height: 50px; /* Altura del header similar a la imagen proporcionada*/
+}
+
+
+main {
+    margin: 0 auto; padding: 0; box-sizing: border-box;
+    /* Máximo ancho para el contenido 960px */
+    max-width: 960px;}
+
+header {
+  border-color: grey;
+}
+footer {
+  background: black;
+}
+
+img {/* Ajustamos las imágenes a sus contenedores por defecto para que se ajusten y reescalen*/
+    max-width: 100%; /* Maximo tamaño el del contenedor */
+    height: auto; /* Evitamos que con el ajuste se deforme */
+}
+
+a { /* Por defecto los enlaces irán con una opacidad del 70% y en blanco*/
+    color: white; 
+    opacity: 0.7;
+    text-decoration: none;
+}
+a:hover{/*Establezco el color de los enlaces cuando pasamos por encima a verde y sin linea*/
+    color: #35b728; /* Letra color verde */
+    opacity: 1; /* Sin opacidad*/
+}
+
+/* Confirguración listas ordenadas */
+ol {
+    counter-reset: li; /* Iniciamos contador */
+    list-style: none; /* Borramos numeración por defecto*/
+	margin: 0px;
+	padding: 0px;
+}
+
+/* Confirguración listas desordenadas */
+ul { 
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul p { /* Párrafos de las listas */ 
+    padding: 0px 0px 4px 0px; margin: 0 auto;}
+
+/* Alineamos a la izquierda los títulos de los div */
+div h2 {text-align: left; margin-top: 1.5em;}
+
+/* Section sin padding ni margen por defecto */
+section {padding: 0; margin: 0;}
+
+/* Alineamos a la izquierda los títulos de los section */
+section h2 {text-align: left; margin-top: 1.5em;}
+
+/* Formato estñandar de los botones de formulario: Fondo verde y letra en blanco. 
+Borde redondeado. Opacidad del 70% y sin opacidad con hover*/
+[type="submit"] {
+    width: auto;
+    background:#35b728;
+    border-radius:5px;
+    border:0;
+    cursor:pointer;
+    color:white;
+    font-size:12px;
+    padding-top:5px;
+    padding-bottom:5px;
+    transition: all 0.3s;
+    margin-top: 5px;
+    font-weight:700;
+    opacity: 0.7;
+    /* Transicion para el hover, de forma que  se agrande paulatinamente */
+    transition: all .2s ease-in-out; 
+}
+[type="submit"]:hover { 
+    background:#35b728; 
+    opacity: 1; 
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+/************************************************************************
+****************************** CLASES HEADER ****************************
+*************************************************************************/
+
+.encabezadoLogoBuscador{  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.logo{	/*Esta clase la la asigno al div que envuelve la imagen del logotipo*/
+    margin: 0;
+     width: 50px;		
+    height: 50px; 
+    /* Transicion para el hover, de forma que el logo se agrande paulatinamente */
+    transition: all .2s ease-in-out; 
+}
+/* La imagen del logo, pese a ser un link, no queremos que tenga opacidad (ni el efecto opacidad 0.7->1 del resto de enlaces) */
+.logo a {opacity: 1;}
+
+/* Efecto para agrandar el logo con el hover */
+.logo:hover
+{
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+header nav{		
+    width: 100%;
+    text-align: right;
+	float: right; /* Menu de navegación flotando a la derecha del encabezado */
+}
+nav ul li {	
+	display: inline-block; /* Elementos del menú de navegación en línea*/
+}
+nav ul li a {	
+	/* Formatos especiales para los elementos del menú */
+    opacity: 1;
+    color: white;
+	margin-left: 1em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+nav ul li a.activa {	
+	color: #35b728;
+    font-weight: bold;/* En otro color (negro) la página actual*/
+}
+nav ul li a:hover{	
+	color: #35b728; /* Cambio de color del texto enlaces menú a negro cuando se pasa por encima */
+    opacity: 0.7;
+}
+				
+
+footer{	/*establezco la altura y el color de fondo del pie de página*/
+    padding-top: 1em;
+    width: 100%;
+	font-size: 10pt; /*Asigno el tamaño del texto del footer*/
+}
+
+footer p{
+    padding: 0;
+	margin: 0px; /*elimino los márgenes de los párrafos del footer*/
+}
+
+/* Buscador */
+.buscador {
+	text-align: right; /* Por defecto el buscador alineado a la derecha*/
+    border: 0px;
+    margin: 0;
+}
+
+.buscador:before,
+.buscador:after {
+	content: '';
+	display: block;	
+	height: 1px;
+	left: 50%;
+	margin: 0 auto;
+}
+
+.buscador:before {
+	background: #444;
+    background: linear-gradient(to left, #151515, #444, #151515);
+	background: -webkit-linear-gradient(left, #151515, #444, #151515);
+	background: -moz-linear-gradient(left, #151515, #444, #151515);
+	background: -o-linear-gradient(left, #151515, #444, #151515);
+	background: -ms-linear-gradient(left, #151515, #444, #151515);
+}
+
+.buscador:after {
+	background: #000;
+    background: linear-gradient(to left, #151515, #000, #151515);
+	background: -webkit-linear-gradient(left, #151515, #000, #151515);	
+	background: -moz-linear-gradient(left, #151515, #000, #151515);	
+	background: -o-linear-gradient(left, #151515, #000, #151515);	
+	background: -ms-linear-gradient(left, #151515, #000, #151515);		
+}
+
+.buscador form {
+	background: #111;
+	background: -webkit-linear-gradient(#1b1b1b, #111);
+	background: -moz-linear-gradient(#1b1b1b, #111);
+	background: -o-linear-gradient(#1b1b1b, #111);
+	background: -ms-linear-gradient(#1b1b1b, #111);
+	background: linear-gradient(#1b1b1b, #111);
+	border: 1px solid #000;
+	border-radius: 5px;
+	box-shadow: inset 0 0 0 1px #272727;
+	display: inline-block;
+	font-size: 0px;
+	margin: 0 auto 0;
+
+}
+
+.buscador input {
+	background: #222;
+	background: -webkit-linear-gradient(#333, #222);	
+	background: -moz-linear-gradient(#333, #222);	
+	background: -o-linear-gradient(#333, #222);	
+	background: -ms-linear-gradient(#333, #222);	
+	background: linear-gradient(#333, #222);	
+	border: 1px solid #444;
+	border-radius: 5px 0 0 5px;
+	box-shadow: 0 2px 0 #000;
+	color: #888;
+	display: block;
+	float: left;
+	font-size: 11px;
+	font-weight: 400;
+	height: 25px;
+	margin: 0 auto;
+	text-shadow: 0 -1px 0 #000;
+	width: 150px;
+}
+
+.ie .buscador input {
+	line-height: 40px;
+}
+
+.buscador input::-webkit-input-placeholder {
+   color: #888;
+}
+
+.buscador input:-moz-placeholder {
+   color: #888;
+}
+
+.buscador input:focus {
+	-webkit-animation: glow 800ms ease-out infinite alternate;
+	-moz-animation: glow 800ms ease-out infinite alternate;
+	-o-animation: glow 800ms ease-out infinite alternate;
+	-ms-animation: glow 800ms ease-out infinite alternate;
+	animation: glow 800ms ease-out infinite alternate;
+	background: #222922;
+	background: -webkit-linear-gradient(#333933, #222922);
+	background: -moz-linear-gradient(#333933, #222922);
+	background: -o-linear-gradient(#333933, #222922);
+	background: -ms-linear-gradient(#333933, #222922);
+	background: linear-gradient(#333933, #222922);
+	border-color: #35b728;
+	box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+	color: #efe;
+	outline: none;
+}
+
+.buscador input:focus::-webkit-input-placeholder { 
+	color: #efe;
+}
+
+.buscador input:focus:-moz-placeholder {
+	color: #efe;
+}
+
+.buscador button {
+	background: #222;
+	background: -webkit-linear-gradient(#333, #222);
+	background: -moz-linear-gradient(#333, #222);
+	background: -o-linear-gradient(#333, #222);
+	background: -ms-linear-gradient(#333, #222);
+	background: linear-gradient(#333, #222);
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	box-sizing: content-box;
+	border: 1px solid #444;
+	border-left-color: #000;
+	border-radius: 0 5px 5px 0;
+	box-shadow: 0 2px 0 #000;
+	color: #fff;
+	display: block;
+	float: left;
+	font-size: 12px;
+	font-weight: 400;
+	height: 27px;
+	line-height: 27px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	text-shadow: 0 -1px 0 #000;
+	width: 27px;
+}	
+
+.buscador button:hover,
+.buscador button:focus {
+	background: #292929;
+	background: -webkit-linear-gradient(#728939, #292929);	
+	background: -moz-linear-gradient(#728939, #292929);	
+	background: -o-linear-gradient(#728939, #292929);	
+	background: -ms-linear-gradient(#728939, #292929);	
+	background: linear-gradient(#728939, #292929);
+	color: #5f5;
+	outline: none;
+}
+
+.buscador button:active {
+	background: #292929;
+	background: -webkit-linear-gradient(#728939, #292929);
+	background: -moz-linear-gradient(#728939, #292929);
+	background: -o-linear-gradient(#728939, #292929);
+	background: -ms-linear-gradient(#728939, #292929);
+	background: linear-gradient(#728939, #292929);
+	box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+	top: 1px;
+}
+
+@-webkit-keyframes glow {
+    0% {
+		border-color: #35b728;
+		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }	
+    100% {
+		border-color: #6f6;
+		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
+
+@-moz-keyframes glow {
+    0% {
+		border-color: #35b728;
+		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }	
+    100% {
+		border-color: #6f6;
+		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
+
+@-o-keyframes glow {
+    0% {
+		border-color: #35b728;
+		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }	
+    100% {
+		border-color: #6f6;
+		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
+
+@-ms-keyframes glow {
+    0% {
+		border-color: #35b728;
+		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }	
+    100% {
+		border-color: #6f6;
+		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
+
+@keyframes glow {
+    0% {
+		border-color: #35b728;
+		box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    }	
+    100% {
+		border-color: #6f6;
+		box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+    }
+}
+
+/* Fin Buscador */
+
+
+/* Menú hamburguesa */
+
+/* Capa desplegable del menú */
+#menuHamburguesa {
+    background: #333;
+    width: 15em;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    transform: translateX(15em);
+    top: 0;
+    z-index: 800;
+    transition: 0.5s;
+}
+#menuHamburguesaCB {
+    display: none;
+}
+
+#menuHamburguesaCB:checked ~ #menuHamburguesa {
+    transform: translateX(0rem);
+}
+
+/* label que hace las veces de "icono" del menú (3 span/rayas)*/ 
+#menuHamburguesaLbl {
+    position: absolute;
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    right: 1rem;
+    top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#menuHamburguesaLbl > i {
+    height: 2px;
+    
+    transition: 0.5s;
+    z-index: 999;
+}
+
+#menuHamburguesaCB:checked ~ #menuHamburguesaLbl > i {
+  
+}
+
+/* El icono del menú de hamburguesa se mueve verticalmente 30º al pulsar el icono/label */
+#menuHamburguesaCB:checked ~ #menuHamburguesaLbl > i:nth-child(1) {
+    transform: translateY(10px) rotate(-30deg); 
+}
+
+
+/* Elementos del menú en vertical con flex*/
+#divMenuHamburguesa nav ul li {
+    margin-left: 1em;
+    display: flex;
+}
+
+/* Fin menú hamburguesa */
+
+
+/*********************************************************************
+***************************** CLASES FOOTER **************************
+**********************************************************************/
+
+/* Menu vertical */
+.menuVertical {margin: 0 auto; padding: 0em 10em 0em 10em; line-height: 1.5em; }
+
+.menuVertical a {
+    margin: 0 auto; padding: 0;
+    background-color: black;
+    color: white;
+    display: block;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.menuVertical a:hover {
+    color: #35b728;
+    font-weight: bold;
+    background-color: #444444;
+    opacity: 1;
+}
+/* Form Newsletter*/
+
+.formNewsletter{
+    width: 55%;
+    margin: 0 auto;
+}
+
+.formNewsletter fieldset {
+    border:0;
+}
+
+.formNewsletter legend{
+    padding: 1em; 
+}
+.formNewsletterInput {
+  color:white;
+  font-weight:500;
+  font-size: 1em;
+  border-radius: 5px;
+  line-height: 12px;
+  background-color: transparent;
+  border:1px solid white;
+  transition: all 0.3s;
+  padding: 4px;
+  margin-bottom: 5px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.formNewsletterInput:focus { border:2px solid #35b728; }
+
+/* divSocialMedia */
+
+#divSocialMedia{margin: 0 auto; padding: 0; height: 4em; line-height: 4em;}
+
+.fa {
+    font-size: 2em;
+    text-align: center;
+    text-decoration: none;
+    flex-basis: 20%;
+    opacity: 0.5;
+    transition: all .2s ease-in-out;  /* Transición para el aumento de tamaño del hover */
+}
+
+.fa:hover {
+    opacity: 1; 
+    color: white; 
+    /* Aumento de tamaño con hover */ 
+    -webkit-transform: scale(1.3); 
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+/* Formato de los iconos FA de Redes Sociales */
+.fa-facebook {background: #3B5998; color: white; }
+.fa-twitter { background: #55ACEE; color: white; }
+.fa-youtube { background: #bb0000; color: white; }
+.fa-instagram { background: #125688; color: white; }
+.fa-pinterest { background: #cb2027; color: white; }
+
+/* Pie con texto autor */
+.pieAutor { font-weight: 400; margin-top: 1em; text-align: center; height: 2em;}
+
+/*********************************************************************
+****************************** CLASES MAIN ***************************
+**********************************************************************/
+
+/* Elementos FLEX */
+.flexContainer { 
+    /* Contenido con un ancho máximo de 960 px pero "reservando el 100% del ancho */ 
+    width: 100%; 
+    margin: 0 auto;
+    display: flex;  
+    flex-flow: row wrap;
+    text-align: center;
+    align-content: center;
+    align-items:center; /* Elementos centrados verticalmente */
+}
+
+.flexContainer > * {
+  padding: 0px;
+  flex: 1 100%;
+}
+
+/* Para los elementos flexItem contenidos en flexContainer definimos box-sizing: border-box; para que los padding no se salgan del contenedor, sin márgen y un padding de 2px.*/
+[class^='flexItem_'] { box-sizing: border-box; margin: 0; padding: 2px;}
+
+/* Elementos inline-block */
+.inlineBlockFloatLeftContainer { 
+    /* Definimos box-sizing: border-box; para que los padding no se salgan del contenedor, sin márgen y un padding de 2px*/
+    box-sizing: border-box; margin: 0; padding: 2px;
+    display:inline-block;  
+    float:left;
+    text-align: center;
+    align-content: center;
+    align-items:center;
+}
+
+/*
+Clase que "oculta" el contenido del elemento, aunque éste sigue recibiendo el foco mediante el tabulador (p.e. con "display:hidden" no sería posible)Para logra esto se aplicar un recorte (clip) y con "position:absolute" los eliminamos del flujo del documento sin ocupar espacio
+*/
+.contenidoOculto {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+/***************** Elementos Página INDEX.HTML *****************/
+
+/* Contenedor de las listas destacadas en Index: Flex con dos elementos, la imagen a la izquierda y el texto a la derecha, ambos con 50% anchura */
+.listaDestacadaContenedor {
+    display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; padding: 4px;  
+    }
+.listaDestacadaContenedor img {max-width: 50%; margin-right: 4px;}
+
+/* Lista de usuarios destacados */
+
+.listaolBullets {
+    list-style: none;
+    padding-left: 1.0em;
+    text-align: left;
+    padding-left: 2em;
+    word-wrap: break-word;
+    
+}
+.listaolBullets  li {
+    margin: .5rem 0;
+  }
+.listaolBullets li:before {
+    font-family:FontAwesome;
+    content: '\f007'; /* icono que representa un usuario */ 
+    margin: 0 .5em .1em -.85em;
+  }
+
+/**************** Elementos página CATEGORÍAS.HTML ***************/
+
+/* Para las cabeceras de las secciones metemos un margen superior y alineamos los dos tipos de tamaños de titulos para alinearlos horizontalmente*/
+[id^='spanCategorias'] h2 { text-align: left; margin-top: 1.5em;}
+[id^='spanCategorias'] h3 {text-align: right; margin-top: -1.5em;}
+
+/***************** Elementos página DETALLE.HTML *****************/
+
+/* div contenedor de la serie destacada*/
+#divSerieDetalle{margin-top: 4em; max-width: 960px;}
+
+/* div con el fondo de imagen de la serie */
+#divDetalleImagenFondo
+{
+    padding: 0; margin: 0 auto;
+    display: block;
+    
+    /* Establecemos el div ocupando todo el ancho de la pantalla, independientemente del ancho del contenedor,
+    main, que está limitado a 960px */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+#divDetalleImagenFondo:after {
+    content: "";    
+    opacity: 0.25; /* Opacidad */
+    top: 0; left: 0; bottom: 0; right: 0; /* Colocación absoluta */
+    position: absolute;
+    z-index: -1;   
+    /* Fijamos imagen de fondo como cover */
+    background: url(../img/detalle/detalle-fondo.jpg) no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* Alineamos a la izquierda los títulos de los flexItem_1_2_2 */
+.flexItem_1_2_2 {text-align: left; margin-top: 1.5em;}
+
+/* Formato de "Botones" de agregar a lista, favorito, puntuación */
+[id^='detalleBoton'] { 
+    margin: 0.5em;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding:0.4em;}
+
+/* Puntuación mediante estrellas*/
+/* span rating unicode-bidi junto con la propiedad direction para establecer que el texto (estrella fondo transparente) debe anularse/sutituirse (estrella amarilla). Fijamos display: inline-block para que las 5 estrellas permanezcan juntas */
+.rating {unicode-bidi:bidi-override;direction:rtl;font-size:12pt;display: inline-block;}
+.rating span.estrella{font-family:FontAwesome;font-weight:normal;font-style:normal;display:inline-block; padding: 0;}
+.rating span.estrella:hover{cursor:pointer}
+.rating span.estrella:before{content:"\f006";padding-right:5px;color:#777}
+/* con el hover de los span hacemos la sustitución de la fuente de la estrella */
+.rating span.estrella:hover:before,.rating span.estrella:hover~span.estrella:before{content:"\f005";color:#35b728;}
+
+/**** Contenedores de la parte inferior ****/
+/* Contenedor general inferior */ 
+div#divDetalleInferiorContenedor {margin: 0 auto; width: 100%; background: black;}
+/* Contenedor derecha*/
+div#divDetalleInferiorDerecha {width: 25%; box-sizing: border-box; padding-left: 1em; float: right; background: black;}
+/* Contenedor izquierda arriba */ 
+div#divDetalleInferiorIzquierdaArriba {width: 75%; box-sizing: border-box; ; background: black;}
+/* Contenedor izquierda abajo */ 
+div#divDetalleInferiorIzquierdaAbajo {width: 50%; box-sizing: border-box;  background: black;}
+
+/* lista Información serie */
+ol#olDetalleInformacion li:before { content: '\f008'; }/* icono que representa una película para cada elemento de la lista*/ 
+
+/* Damos formato de tabla a la lista de actores, de forma que "simulamos" una tabla con los li, haciendo con estos contenedores flexbox que contienen 4 elmentos en dispositivos grandes y dos por línea en pantallas pequeñas */
+ul#ulDetalleReparto {margin-top: 1em;}  
+ul#ulDetalleReparto li {border: 1px; border-bottom-style:solid ;border-bottom-color: white;}  
+ul#ulDetalleReparto li span {text-align: left; }  
+ul#ulDetalleReparto li span img {height: 4em; /* limitamos tamaño imagen del actor */}     
+
+/**************** Elementos página ENVIAR.HTML ***************/
+
+/* div contenedor de la imagen de fondo y del formulario */
+#divFondoEnviar{margin-top: 4em; max-width: 960px;}
+
+/* div con el fondo de imagen del formulario */
+#divFondoEnviarForm
+{
+    padding: 0; margin: 0 auto;
+    display: block;
+    /* Establecemos el div ocupando todo el ancho de la pantalla, independientemente del ancho del contenedor,
+    main, que está limitado a 960px */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 5vw;
+}
+#divFondoEnviarForm:after {
+    content: "";    
+    opacity: 0.30; /* Opacidad */
+    top: 0; left: 0; bottom: 0; right: 0; /* Colocación absoluta */
+    position: absolute;
+    z-index: -1;   
+    /* Fijamos imagen de fondo como cover */
+    background: url(../img/enviar/bb1680.jpg) no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#divFondoEnviarForm h2 {text-align: center; padding-top: 2em;}
+
+.formEnviar{
+    /* Contenido con un ancho máximo de 960 px pero "reservando el 100% del ancho */ 
+    width: 75%; 
+    margin: 0 auto;
+    display: flex;  
+    flex-flow: row wrap;
+    text-align: center;
+    align-content: center;
+    align-items:center; /* Elementos centrados verticalmente */
+
+}
+
+/* Para los elementos del formulario definimos box-sizing: border-box; para que los padding no se salgan del contenedor, sin márgen y un padding de 2px.*/
+.formEnviar > * {
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    margin: 0 auto; padding: 2px;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+/* *Agrupamos los fieldset de dos en dos por defecto */
+.formEnviar fieldset{
+    flex: 1 100%;
+    margin: 2em auto;
+    border-radius: 20px; /* Redondeamos bordes */
+	padding: 0;
+    border: 0.5px solid;
+    border-color: grey;
+    
+}
+
+/* Leyendas 14pt */
+.formEnviar fieldset legend {
+	font-size: 13pt;
+    opacity: 0.8;
+}
+
+/* Leyendas 14pt */
+.formEnviar fieldset legend:hover {
+    opacity: 1;
+}
+
+/* Labels en línea con sus input */
+.formEnviar label {
+	display: inline-block;
+	margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+/* Para alinear los elementos de "Otros Datos" los metemos en un div flexbox */
+#formOtros {
+    /* Contenido con un ancho máximo de 960 px pero "reservando el 100% del ancho */ 
+    width: 100%; 
+    margin: 0 auto;
+    display: flex;  
+    flex-flow: row wrap;
+    text-align: center;
+    align-content: center;
+    align-items:center; /* Elementos centrados verticalmente */
+}
+
+.formEnviar input[type="text"],
+.formEnviar input[type="date"],
+.formEnviar input[type="number"],
+.formEnviar input[type="url"],
+.formEnviar input[type="file"],
+.formEnviar input[type="textarea"],
+.formEnviar select {
+    
+    font-family: 'Ubuntu', helvetica, arial, sans-serif;  /* Fuente para la web*/
+    font-size: 10pt;
+    color:white;
+    font-weight:500;
+    border-radius: 5px; /* Redondeamos las cajas */
+    background-color: transparent;
+    border:1px solid white;
+    transition: all .2s ease-in-out;  /* Transición para el aumento de tamaño del hover */
+    outline:0;
+    margin: 1em;
+}
+
+.formEnviar input[type="text"]:hover,
+.formEnviar input[type="date"]:hover,
+.formEnviar input[type="number"]:hover,
+.formEnviar input[type="url"]:hover,
+.formEnviar input[type="file"]:hover,
+.formEnviar input[type="textarea"]:hover,
+.formEnviar input[type="submit"]:hover,
+.formEnviar select:hover {
+
+    opacity: 1;
+    /* Aumento de tamaño con hover */ 
+    -webkit-transform: scale(1.1); 
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    
+    border:2px solid #35b728; 
+}
+
+.formEnviar input[type="submit"]{
+    width: auto;
+    font-size: 14pt;
+	
+}
+.formEnviar input[type="submit"]:hover{
+    -webkit-transform: scale(1.2); 
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& COMPORTAMIENTO RESPONSIVE &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+/* 
+Elementos FLEX
+Los elementos tipo flexItem en el contenedor flex (flexContainer) los agrupamos en lotes de máximo tres o cuatro elementos en pantallas grandes, en función de la definición en el wireframe:
+.flexItem_1_2_2 : 1 elemento en pantalla pequeña, 2 elementos en pantalla mediana y 2 elementos en pantalla grande.
+.flexItem_1_2_3 : 1 elemento en pantalla pequeña, 2 elementos en pantalla mediana y 3 elementos en pantalla grande.
+.flexItem_1_2_4 : 1 elemento en pantalla pequeña, 2 elementos en pantalla mediana y 4 elementos en pantalla grande.
+.flexItem_1_3_6 : 1 elemento en pantalla pequeña, 3 elementos en pantalla mediana y 6 elementos en pantalla grande.
+.flexItem_3_3_6 : 3 elementos en pantalla pequeña, 3 elementos en pantalla mediana y 6 elementos en pantalla grande.
+.flexItem_2_4_4 : 3 elementos en pantalla pequeña, 3 elementos en pantalla mediana y 6 elementos en pantalla grande.
+*/
+
+
+/*************************************************************** 
+*********************** MIN-WITH>=300px ************************
+/***************************************************************/ 
+
+@media all and (min-width: 300px) and (max-width: 599px){
+    
+    /* Adaptamos fuentes headers al dispositivo*/
+    h1{ font-size: 25px;}
+    h2{ font-size: 18px;}
+    h3{ font-size: 15px;}
+    
+    /* Logo a un 100% y sin opacidad*/
+    .imgLogo { max-width: 100%; opacity: 1;}
+    
+    /* 1 columna */
+    .flexItem_1_2_3 { flex-basis: 100%; /* el 100% de la fila -> 1 elemento */}
+    
+    /* 1 columna */
+    .flexItem_1_2_2 { flex-basis: 100%; /* el 100% de la fila -> 1 elemento */}
+    
+    /*  1 columna*/
+    .flexItem_1_2_4 { flex-basis: 100%; /* el 100% de la fila -> 1 elemento */ }
+    
+    /* 1 columna*/
+    .flexItem_1_3_6 { flex-basis: 100%; /* el 100% de la fila -> 1 elemento */ }
+    
+    /* 2 columnas*/
+    .flexItem_2_5_5 { flex-basis: 50%; /* el 50% de la fila -> 2 elementos*/ }
+    
+    /* 2 columnas */
+    .flexItem_2_4_4 { flex-basis: 50%; /* el 100% de la fila -> 2 elementos */ }
+    
+    /* 3 columnas*/
+    .flexItem_3_3_6 { flex-basis: 33%; /* el 33% de la fila -> 3 elementos*/ }
+    /* Página de detalle: Ocultamos en la lista de 6 imágenes de la serie, las 3 últimas en móviles (max-width: 600px) */
+    [id^='liDetalleImagenes_f2'] {display: none;}
+    
+    
+    /* liCategoriasTendenciasinlineBlockFloatLeftContainer en pantalla pequeña: 1 columna -> 100% para cada elemento*/
+    [id^='liCategoriasTendenciasinlineBlockFloatLeftContainer'] { width: 100%; }
+        
+    /* Mostramos div del menú de hamburguesa */
+    #divMenuHamburguesa {display: inherit;}
+    #divEncabezado {display: none}
+    
+    /* En pantallas pequeñas fijamos a 20em el máximo de los inputs de los forms para evitar scrolls horizontales */
+    .formEnviar input {max-width: 20em;}
+}
+
+
+/************************************************************** 
+*********************** MIN-WITH>=600px ***********************
+***************************************************************/
+
+@media all and (min-width: 600px) and (max-width: 959px){
+    
+    /* Adaptamos fuentes headers al dispositivo*/
+    h1{ font-size: 30px;}
+    h2{ font-size: 18px;}
+    h3{ font-size: 15px;}
+    
+    
+    /* Logo a un 150% y sin opacidad*/
+    .imgLogo {max-width: 150%; opacity: 1;}
+    
+    /* 2 columnas*/
+    .flexItem_1_2_3 { flex-basis: 50%; /* el 50% de la fila -> 2 elementos */ }
+    
+    /* 2 columnas*/
+    .flexItem_1_2_2 { flex-basis: 50%; /* el 30% de la fila -> 2 elementos */ }
+
+    /* 2 columnas*/
+    .flexItem_1_2_4 { flex-basis: 50%; /* el 50% de la fila -> 2 elementos*/ }
+
+    /* 3 columnas*/
+    .flexItem_1_3_6 { flex-basis: 33%; /* el 33% de la fila -> 3 elementos*/ }
+    
+    /* 4 columnas */
+    .flexItem_2_4_4 { flex-basis: 25%; /* el 25% de la fila -> 4 elementos */ }
+    
+    /* 5 columnas*/
+    .flexItem_2_5_5 { flex-basis: 20%; /* el 20% de la fila -> 5 elementos*/ }
+    
+    /* 6 columnas*/
+    .flexItem_3_3_6 { flex-basis: 33%; /* el 33% de la fila -> 3 elementos*/ }
+    
+    /* liCategoriasTendenciasinlineBlockFloatLeftContainer en pantalla mediana: 3 columnas -> 33% para cada elemento*/
+    [id^='liCategoriasTendenciasinlineBlockFloatLeftContainer'] { width: 33%; }
+    
+    /* Ocultamos div del menú de hamburguesa */
+    #divMenuHamburguesa {display: none;}
+
+}
+
+/*************************************************************** 
+*********************** MIN-WITH>=960px ************************
+***************************************************************/ 
+
+@media all and (min-width: 960px) {
+    
+    /* Adaptamos fuentes headers al dispositivo*/
+    h1{ font-size: 35px;}
+    h2{ font-size: 20px;}
+    h3{ font-size: 17px;}
+    
+    /* Logo a un 200% dado que la pantalla lo permite*/
+    .imgLogo {max-width: 200%; opacity: 1;}
+
+    /* 2 columnas*/
+    .flexItem_1_2_2 { flex-basis: 50%; /* el 50% de la fila -> 2 elementos */ }
+    
+    /*  3 columnas*/
+    .flexItem_1_2_3 { flex-basis: 33%; /* el 33% de la fila -> 3 elementos*/ }
+
+    /*  4 columnas*/
+    .flexItem_1_2_4 { flex-basis: 25%; /* el 25% de la fila -> 4 elementos*/ }
+    
+    /* 4 columnas */
+    .flexItem_2_4_4 { flex-basis: 25%; /* el 25% de la fila -> 4 elementos */ }
+    
+    
+    /*  6 columnas*/
+    .flexItem_1_3_6 { flex-basis: 16.66%; /* el 16.66% de la fila -> 6 elementos*/ }
+    
+
+    /* 5 columnas*/
+    .flexItem_2_5_5 { flex-basis: 20%; /* el 20% de la fila -> 5 elementos*/ }
+    
+    /* 6 columnas*/
+    .flexItem_3_3_6 { flex-basis: 16.66%; /* el 16.66% de la fila -> 6 elementos*/ }
+    
+    /*Listas de películas con resoluciones >=960 px*/
+    #listaDestacados > li {flex: 0 0 25%; /* el 25% por defecto cada elemento para alojar al primero y al último que ocupan el 50% de la línea cada uno*/}
+    #listaDestacados > li:first-child {flex: 2 0 50%; /* el 50% el primero */}
+    #listaDestacados > li:last-child {flex: 2 0 50%; /* el 50% el último */}    
+    
+    #listaUsuariosDestacados {align-items:flex-start;}
+    
+    /* liCategoriasTendenciasinlineBlockFloatLeftContainer en pantalla grande: 6 columnas -> 16.66% para cada elemento*/
+    [id^='liCategoriasTendenciasinlineBlockFloatLeftContainer'] { width: 16.66%; }
+    
+    /* Ocultamos div del menú de hamburguesa */
+    #divMenuHamburguesa {display: none;}
+    
+}
+
