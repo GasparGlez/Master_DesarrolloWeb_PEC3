@@ -444,66 +444,75 @@ la colocamos en la esquina superior derecha de forma absoluta
 **********************************************************************/
 
 /* Div del "menu" vertical de opciones izquierdo */
-.menuVertical {margin: 0 auto; padding: 0em 10em 0em 10em; line-height: 1.5em; }
+#menuVertical {margin: 0 auto; padding:0; line-height: 1.5em; }
 
 /* Estilos de los enlaces display: block y sin margenes ni padding, centrados */
-.menuVertical a {
+#menuVertical a {
     margin: 0 auto; padding: 0;
     display: block;
     text-decoration: none;
     opacity: 0.7;
 }
-.menuVertical a:hover {
+#menuVertical a:hover {
     color: #35b728;
     font-weight: bold;
-    background-color: #444444;
     opacity: 1;
 }
 
 /* Form Newsletter*/
 /* Le asignamos un ancho del 55%, sin márgenes y centrado*/
-.formNewsletter{
+#formNewsletter{
     width: 55%;
     margin: 0 auto;
 }
 /* Fielset sin bordes */
-.formNewsletter fieldset {
+#formNewsletter fieldset {
     border:0;
 }
 /* Leyenda con un padding de 1em */
-.formNewsletter legend{
+#formNewsletter legend{
     padding: 1em; 
 }
 /* Las cajas input de entrada con fondo transparente, borde y texto blancos */
-.formNewsletterInput {
-  color:white;
-  font-weight:500;
-  font-size: 1em;
-  border-radius: 5px;
-  line-height: 12px;
-  background-color: transparent;
-  border:1px solid white;
-  padding: 4px;
-  margin-bottom: 5px;
-  width:100%;
-  box-sizing: border-box;
-  outline:0;
+#formNewsletter input[type="text"],
+#formNewsletter input[type="email"]{
+    color: white;
+    font-weight:500;
+    background: transparent;
+    font-size: 1em;
+    border-radius: 5px;
+    line-height: 12px;
+    border:1px solid white;
+    padding: 4px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    outline:0;
 }
+
+/* Botón con fondo y borde verde*/
+#formNewsletter input[type="submit"] {background: #35b728; border:1px solid #35b728; }
+
 /* Con el focus ponemos el borde de las cajas en el verde de la web para resaltar*/
-.formNewsletterInput:focus { border:2px solid #35b728; }
+#formNewsletter input:focus { border:2px solid #35b728; }
 
 /* Div derecho con los iconos de redes sociales */
 
-#divSocialMedia{margin: 0 auto; padding: 0; height: 4em; line-height: 4em;}
+#divSocialMedia{
+    margin: 0 auto; padding: 0; 
+    height: 2em; line-height: 2em; 
+    width: 100%; 
+    display: inline-flex; /* Disposición como flex en línea */
+    justify-content: center; /* Elementos centrados */
+}
 /* Asignamos a los inconos de las diferentes Redes Sociales (que son elementos Font Awesome)
 el tamaño de la fuente 2em y una distribución del 20% del ancho a cada uno dentro del contenedor 
 flex (flex-basis: 20%) */
 .fa {
+    margin: 0.20em; /* Margen para separar cada icono y que no se "pisen" al crecer */
     font-size: 2em;
-    text-align: center;
     text-decoration: none;
-    flex-basis: 20%;
-    opacity: 0.5;
+    flex-basis: 20%; /* Al ser 5 elementos : 20% */
+    opacity: 0.5; /* Opacidad de 0.5 para el efecto con hover */
     transition: all .2s ease-in-out;  /* Transición para el aumento de tamaño del hover */
 }
 /* Con hover hacemos que los iconos de RRSS pierdan la opacidad y se reescalen al 130% para dar énfasis al 

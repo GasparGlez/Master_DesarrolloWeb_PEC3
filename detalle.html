@@ -179,35 +179,32 @@
         </div>
     </main>
     
-	<footer>
+ 	<footer>
         <div class="flexContainer">
-            <div class="flexItem_1_2_3">
-                <div class="menuVertical">
-                    <a href="#">Sobre nosotros</a>
-                    <a href="#">Ayuda</a>
-                    <a href="#">Contacto</a>
-                    <a href="#">Aviso legal</a>
-                </div>
-            </div>
-            <div class="flexItem_1_2_3">
+            <ul class="flexItem_1_2_3" id="menuVertical">
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Aviso legal</a></li>
+            </ul>
+        
+            <form class="flexItem_1_2_3" id="formNewsletter">  
+                <fieldset>
+                <legend>Suscríbete a nuestra newsletter</legend>
+                    <input name="nombre" type="text" placeholder="Nombre" />   
+                    <input name="email" type="email" placeholder="Email" />
+                </fieldset>
+                <input type="submit" id="formNewsletterButton" value=" ENVIAR "/>
+            </form>     
 
-                <form class="formNewsletter">    
-                    <fieldset>
-                        <legend>Suscríbete a nuestra newsletter</legend>
-                          <input name="nombre" type="text" class="formNewsletterInput" placeholder="Nombre" />   
-                          <input name="email" type="email" class="formNewsletterInput" placeholder="Email" />
-                          <input type="submit" value="ENVIAR"/>
-                    </fieldset>
-                </form>     
-            </div>
-            <div class="flexItem_1_2_3" id="divSocialMedia">
-                    <!-- Iconos RRSS font awesome -->
-                    <a href="https://www.facebook.com/" class="fa fa-facebook fa-2x" target="_blank"></a>
-                    <a href="https://www.twitter.com/" class="fa fa-twitter fa-2x" target="_blank"></a>
-                    <a href="https://www.youtube.com/" class="fa fa-youtube fa-2x" target="_blank"></a>
-                    <a href="https://www.instagram.com/" class="fa fa-instagram fa-2x" target="_blank"></a>
-                    <a href="https://www.pinterest.com/" class="fa fa-pinterest fa-2x" target="_blank"></a>
-            </div>
+            <ul class="flexItem_1_2_3" id="divSocialMedia">
+                <!-- Iconos RRSS font awesome -->
+                <li><a href="https://www.facebook.com/" class="fa fa-facebook fa-2x" target="_blank"></a></li>
+                <li><a href="https://www.twitter.com/" class="fa fa-twitter fa-2x" target="_blank"></a></li>
+                <li><a href="https://www.youtube.com/" class="fa fa-youtube fa-2x" target="_blank"></a></li>
+                <li><a href="https://www.instagram.com/" class="fa fa-instagram fa-2x" target="_blank"></a></li>
+                <li><a href="https://www.pinterest.com/" class="fa fa-pinterest fa-2x" target="_blank"></a></li>
+            </ul>
         </div>
 		<div class="pieAutor">
             &copy;&nbsp;2017-2018&nbsp;- Gaspar González Vara
