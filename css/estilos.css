@@ -609,7 +609,7 @@ Clase que "oculta" el contenido del elemento, aunque éste sigue recibiendo el f
 
 
 /* Lista de usuarios destacados: Lista ordenada. Sustituimos los números o bullets por iconos que representan un usuario */
-.listaolBullets {
+.listaulBullets {
     list-style: none;
     padding-left: 1.0em;
     text-align: left;
@@ -617,10 +617,10 @@ Clase que "oculta" el contenido del elemento, aunque éste sigue recibiendo el f
     word-wrap: break-word;
     
 }
-.listaolBullets  li {
+.listaulBullets  li {
     margin: .5rem 0;
   }
-.listaolBullets li:before {
+.listaulBullets li:before {
     font-family:FontAwesome;
     content: '\f007'; /* icono que representa un usuario */ 
     margin: 0 .5em .1em -.85em;
@@ -706,7 +706,7 @@ div#divDetalleInferiorIzquierdaArriba {width: 75%; }
 div#divDetalleInferiorIzquierdaAbajo {width: 50%; }
 
 /* Lista Información serie: A cada li le asignamos un icono FA */
-ol#olDetalleInformacion li:before { content: '\f008'; }/* icono que representa una película para cada elemento de la lista*/ 
+ul#ulDetalleInformacion li:before { content: '\f008'; }/* icono que representa una película para cada elemento de la lista*/ 
 
 /* Ul de la lista de actores: Damos "formato de tabla" a la lista de actores, de forma que simulamos una tabla con los li, haciendo con estos contenedores flexbox que contienen 4 elementos en dispositivos grandes y dos por línea en pantallas pequeñas (flexItem_2_4_4) */
 ul#ulDetalleReparto {margin-top: 1em;}  
@@ -924,7 +924,15 @@ A continuación se detalla el comportamiento responsive -para cualquier disposit
     /* 3 columnas*/
     .flexItem_3_3_6 { flex-basis: 33%; /* el 33% de la fila -> 3 elementos*/ }
     
-    /* Página de detalle: Ocultamos en la lista de 6 imágenes de la serie, las 3 últimas en móviles (max-width: 599px) */
+    /**** Página de detalle ****/
+    /*Ajustamos margen del div de la parte superior en pantallas pequeñas para no "apurar"
+    por la izquierda */
+    #divDetalleImagenFondo {margin-left: -47vw; margin-right: -53vw;}
+    /* Con pantallas muy pequeñas ajustamos anchos de estos dos divs al 50% para conseguir que la
+    lista de detalles sea legible */ 
+    div#divDetalleInferiorIzquierdaArriba {width: 50%; } /* Lista imágenes */
+    div#divDetalleInferiorDerecha {width: 50%; } /* Lista detalles serie */
+    /*Ocultamos en la lista de 6 imágenes de la serie, las 3 últimas en móviles (max-width: 599px) */
     [id^='liDetalleImagenes_f2'] {display: none;}
     
     
